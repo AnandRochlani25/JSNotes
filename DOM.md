@@ -454,8 +454,8 @@ document.getElementsByTagName(<class_name>)
 - For the tag simply pass the tag name.
 
 
-
-
+**Example:-**
+~~~
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -491,30 +491,18 @@ document.getElementsByTagName(<class_name>)
 </script>
 
 
+~~~
 
 
 
+## querySelectorAll(<css_selector>)
 
-querySelectorAll(<css_selector>)
+- It return all the elements that matches the css_selector.
+- It will return the elements in the form of array.
 
+**Example:-**
 
-
-
-It return all the elements that matches the css_selector.
-
-
-It will return the elements in the form of array.
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 <!DOCTYPE html>
 <html lang="en">
@@ -550,51 +538,16 @@ It will return the elements in the form of array.
      
 </script>
 
+~~~
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-addEventListener
-
+## addEventListener
 
 <button onclick=”functionName()”></button>
 
 
-Can I say that whenever I write the above syntax I am mixing the HTML code with JS.
-
-
-
-
-Instead of that you should use the eventListener
-
-
-
-
-
-
+- Whenever I write the above syntax I am mixing the HTML code with JS.
+- Instead of that you should use the eventListener
+~~~
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -635,18 +588,16 @@ Instead of that you should use the eventListener
      
 </script>
 
+~~~
 
 
+## Can I add multiple event listner to the same element?
 
+Yes, You can add multiple events to the same element.
 
+**Example** 
 
-You can add multiple events to the same element.
-
-
-
-
-
-
+~~~
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -694,71 +645,9 @@ You can add multiple events to the same element.
      
 </script>
 
+~~~
 
 
+# Project:- (Guess The Number)
 
-
-
-
-
-
-
-
-
-Game You Have to Develop
-
--> Whenever you refresh the page a random number should be generated.
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Guess THe Number</h1>
-    <h1 id="random"></h1>
-    <input type="number" id="userValue">
-    <button id="btn">Submit</button>
-    <h3 id="result"></h3>
-    <h4 id="score">100</h4>
-</body>
-</html>
-
-
-<script>
-        let x=parseInt(Math.random()*50);
-        console.log(x);
-        document.querySelector("#btn").addEventListener("click",checkTheValue);
-
-
-        function checkTheValue(){
-            let val=document.querySelector("#userValue").value;
-            console.log(val);
-            if(val>x){
-                document.querySelector("#result").innerHTML="your guess is too high";
-            }
-            else if(val<x){
-                document.querySelector("#result").innerHTML="your guess is too low";          
-            }
-            else{
-                document.querySelector("#result").innerHTML="your guess correct";
-           
-            }
-        }
-
-
-</script>
-
-
-
-
-
-
+Ask the student to develop it as the hands-on exercise.
