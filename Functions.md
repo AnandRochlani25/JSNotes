@@ -1,8 +1,101 @@
 # Functions
 
+## Function Declaration
+
+- A function definition (also called a function declaration, or function statement) consists of the function keyword, followed by:
+
+1. The name of the function.
+2. A list of parameters to the function, enclosed in parentheses and separated by commas.
+3. The JavaScript statements that define the function, enclosed in curly brackets, { /* … */ }.  
+   
+Example, the following code defines a simple function named square:-
+~~~
+function square(number) {
+  return number * number;
+}
+~~~
+
+## Function expression
+The function keyword can be used to define a function inside an expression.
+
+~~~
+const getRectArea = function(width, height) {
+  return width * height;
+};
+
+console.log(getRectArea(3, 4));
+// Expected output: 12
+
+
+~~~
+
+**Note:- 
+Function expressions in JavaScript are not hoisted, unlike function declarations. You can't use function expressions before you create them.**
+
+Example:-
+
+~~~
+console.log(notHoisted); // undefined
+// Even though the variable name is hoisted,
+// the definition isn't. so it's undefined.
+notHoisted(); // TypeError: notHoisted is not a function
+
+var notHoisted = function () {
+  console.log("bar");
+};
+
+~~~
+
+Calling functions
+Defining a function does not execute it. Defining it names the function and specifies what to do when the function is called.  
+
+Calling the function actually performs the specified actions with the indicated parameters. For example, if you define the function square, you could call it as follows:  
+
+
+~~~
+function square(n){
+    console.log(n*n);
+}
+square(5);
+
+~~~
+
+
+
+Using a function as a callback
+More commonly it is used as a callback: 
+
+You will learn more about this in the later article
+~~~
+button.addEventListener("click", function (event) {
+  console.log("button is clicked!");
+});
+~~~
+
+## Function hoisting
+~~~
+Consider the example below:
+
+console.log(square(5)); // 25
+
+function square(n) {
+  return n * n;
+}
+~~~
+This code runs without any error, despite the square() function being called before it's declared.  
+ This is because the JavaScript interpreter hoists the entire function declaration to the top of the current scope, so the code above is equivalent to:
+
+~~~
+// All function declarations are effectively at the top of the scope
+function square(n) {
+  return n * n;
+}
+
+console.log(square(5)); // 25
+~~~
 ## Default Parameter
 
-Thsi demonstrate all the possible scenario  
+This demonstrate all the possible scenario  
 **Example:-1**
 ~~~
  m1(1,2,3);

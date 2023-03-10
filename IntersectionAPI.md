@@ -43,9 +43,11 @@ Margin around the root. Can have values similar to the CSS margin property, e.g.
 
 - If I do not pass this particular property. The output will look something like this. The header will be locked and displayed when there is sufficent space for header, such that it doesn't overlap with the content.  
 - [![image](https://www.linkpicture.com/q/Screenshot-456_1.png)](https://www.linkpicture.com/view.php?img=LPic6409c751bdf871655387014)
-- But if I add the rootmargin :90
-- I will be able to see the 
-1. **threshold**  
+- But if I add the rootmargin :"100px"
+- I will be able to view the heading after "100px" of invisibility.
+- [![image](https://www.linkpicture.com/q/Screenshot-457_2.png)](https://www.linkpicture.com/view.php?img=LPic6409ca8997f4f608051480)
+  
+3. **threshold**  
 Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback to run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
 
 

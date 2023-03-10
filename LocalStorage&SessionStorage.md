@@ -71,6 +71,8 @@ JS→JSON→Python
 
 To convert from a JavaScript Object to a JSON string we can use the JSON.stringify method.
 To convert from a JSON string to a JavaScript Object we can use the JSON.parse method.
+
+~~~
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,4 +155,13 @@ To convert from a JSON string to a JavaScript Object we can use the JSON.parse m
     }
    }
 </script>
+~~~
 
+
+# Session Storage
+
+sessionStorage is similar to localStorage; the difference is that while data in localStorage doesn't expire, data in sessionStorage is cleared when the page session ends.
+
+## What is page session?
+
+A page session lasts as long as the tab or the browser is open, and survives over page reloads
