@@ -648,6 +648,74 @@ Yes, You can add multiple events to the same element.
 ~~~
 
 
+## setAttribute("<attribute_name>","attribute_value")
+
+Syntax:- element.setAttribute("class","class_name");  
+
+Example:-  
+~~~
+HTML
+<button>Hello World</button>
+Copy to Clipboard
+JavaScript
+const button = document.querySelector("button");
+
+button.setAttribute("name", "helloButton");
+button.setAttribute("disabled", "");
+~~~
+
+
+## getAttribute("<attribute_name>")
+
+The getAttribute() method of the Element interface returns the value of a specified attribute on the element.
+
+~~~
+Examples
+<!-- example div in an HTML DOC -->
+<div id="div1">Hi Champ!</div>
+Copy to Clipboard
+// in a console
+const div1 = document.getElementById("div1");
+//=> <div id="div1">Hi Champ!</div>
+
+const exampleAttr = div1.getAttribute("id");
+//=> "div1"
+
+const align = div1.getAttribute("align");
+//=> null
+
+~~~
+
+## How to add/remove more class to the element?
+
+Use classList to add
+~~~
+const div = document.createElement("div");
+div.className = "foo";
+
+// our starting state: <div class="foo"></div>
+console.log(div.outerHTML);
+
+// use the classList API to remove and add classes
+div.classList.remove("foo");
+div.classList.add("anotherclass");
+
+~~~
+
+## createElement()
+In an HTML document, the document.createElement() method creates the HTML element specified by tagName.
+
+
+
+Syntax
+createElement(tagName)
+
+Example :- 
+
+~~~
+  const newDiv = document.createElement("div");
+~~~
 # Project:- (Guess The Number)
 
 Ask the student to develop it as the hands-on exercise.
+

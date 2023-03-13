@@ -204,28 +204,64 @@ if ('x' in {x: 1, y:2}) {
 
 
 
-`Object.assign` gives us a way to clone properties and members (properties & methods) of an object into another object.
+`Object.assign`
+Object.assign()
+The Object.assign() static method copies all enumerable own properties to a target object. It returns the modified target object.
 
-```jsx
-// Old way
-// let clonedAccount = {};
 
-// for (let key in account) {
-//   clonedAccount[key] = account[key];
-// }
-
-// console.log(clonedAccount); // you may not see the method in codepen, open actual console.
-
-let clonedAccount = Object.assign({}, account);
-console.log(clonedAccount);
+~~~
 ```
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+// Expected output: true
+
+
+
+~~~
+```jsx
 
 Cloning can also be done using the `...` spread operator:
-
-```jsx
 let clonedAccount = { ...account };
 ```
 
+
+**Note:-You can pass multiple source objects to clone from.**  
+
+_Syntax:-_
+
+Object.assign(target, ...sources)
+~~~
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+// Expected output: true
+
+~~~
+
+Example:- 
+
+~~~
+const target = { a: 1, b: 2 };
+const source1 = { b: 12, c: 5 };
+const source2= { b: 4, c: 15 ,d :12};
+const returnedTarget = Object.assign(target, source1,source2);
+
+console.log(target);//Note Value of last source will override if the propert name is same.
+
+~~~
 
 ## Built-in Objects in Javascript
 

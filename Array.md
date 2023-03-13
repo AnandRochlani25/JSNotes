@@ -222,6 +222,102 @@ console.log(map1);
 
 ~~~
 
+## reduce()
+
+The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.  
+
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).  
+
+Example:-1  
+~~~
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+~~~
+
+**Syntax**
+- reduce((accumulator, currentValue) => { /* … */ })
+- reduce((accumulator, currentValue) => { /* … */ },0)  
+  
+**Parameters**  
+- **callbackFn**  
+A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce().
+
+The function is called with the following arguments:
+
+1. accumulator
+The value resulting from the previous call to callbackFn. On first call, initialValue if specified, otherwise the value of array[0].
+
+2. currentValue
+The value of the current element. On first call, the value of array[0] if an initialValue was specified, otherwise the value of array[1].
+
+- **initialValue**  
+It an optional parameter.  
+
+  A value to which accumulator is initialized the first time the callback is called.  
+  If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue.  
+  If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue.  
+   In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
+
+   Example:-1
+
+   ~~~
+    const getMax = (a, b) => Math.max(a, b);
+
+  // callback is invoked for each element in the array starting at index 0
+  let ar=[5,10,100];
+  ar.reduce(getMax,0); // 100
+   ~~~
+
+   Example:-2
+
+   ~~~
+    // friends - an array of objects
+  // where object field "books" is a list of favorite books
+  const friends = [
+  {
+    name: "Anna",
+    books: ["Bible", "Harry Potter"],
+    age: 21,
+  },
+  {
+    name: "Bob",
+    books: ["War and peace", "Romeo and Juliet"],
+    age: 26,
+  },
+  {
+    name: "Alice",
+    books: ["The Lord of the Rings", "The Shining"],
+    age: 18,
+  },
+  ];
+
+  // allbooks - list which will contain all friends' books +
+  // additional list contained in initialValue
+  const allbooks = friends.reduce(
+  (accumulator, currentValue) => [...accumulator, ...currentValue.books],
+  ["Alphabet"],
+  );
+  console.log(allbooks);
+  // [
+  //   'Alphabet', 'Bible', 'Harry Potter', 'War and peace',
+  //   'Romeo and Juliet', 'The Lord of the Rings',
+  //   'The Shining'
+  // ]
+
+
+   ~~~
+
+**Note:-The reduce function is helpful with the operations performed on the objects property**
 ## splice()
 splice() method changes the contents of an array by removing or replacing existing elements
 

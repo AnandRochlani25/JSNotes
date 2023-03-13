@@ -164,4 +164,4 @@ sessionStorage is similar to localStorage; the difference is that while data in 
 
 ## What is page session?
 
-A page session lasts as long as the tab or the browser is open, and survives over page reloads
+A page session lasts as long as the tab or the browser is open, and survives over page reloads.
